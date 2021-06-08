@@ -3,8 +3,26 @@ const morgan = require('morgan')
 const cors = require('cors')
 const path = require('path')
 const history = require('connect-history-api-fallback');
+const mongoose = require('mongoose')
 
 const app = express()
+const uri = 'mongodb://localhost:27017/backend-node'
+
+const options = {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+}
+
+// Conexión a MongoDB
+mongoose.connect(uri, options).then(
+    () => {
+        console.log('Conectó con MongoDB')
+    },
+    err => {
+        err
+    }
+)
 
 // Middleware
 app.use(morgan('tiny'))

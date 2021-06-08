@@ -10,7 +10,21 @@ var path = require('path');
 
 var history = require('connect-history-api-fallback');
 
-var app = express(); // Middleware
+var mongoose = require('mongoose');
+
+var app = express();
+var uri = 'mongodb://localhost:27017/backend-node';
+var options = {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true
+}; // Conexión a MongoDB
+
+mongoose.connect(uri, options).then(function () {
+  console.log('Conectó con MongoDB');
+}, function (err) {
+  err;
+}); // Middleware
 
 app.use(morgan('tiny'));
 app.use(cors());

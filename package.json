@@ -4,6 +4,7 @@
   "description": "Proyecto final de Cómputo en la Nube",
   "main": "index.js",
   "scripts": {
+    "start": "babel-node app.js --exec",
     "dev": "nodemon app.js",
     "babel-node": "babel-node",
     "devBabel": "nodemon --exec npm run babel-node -- app.js"
@@ -11,16 +12,17 @@
   "author": "Jaime Saúl Alonso Sánchez",
   "license": "ISC",
   "dependencies": {
-    "connect-history-api-fallback": "^1.6.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "morgan": "^1.10.0"
-  },
-  "devDependencies": {
     "@babel/cli": "^7.14.3",
     "@babel/core": "^7.14.3",
     "@babel/node": "^7.14.2",
     "@babel/preset-env": "^7.14.4",
+    "connect-history-api-fallback": "^1.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.13",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
     "eslint": "^7.28.0"
   }
 }
