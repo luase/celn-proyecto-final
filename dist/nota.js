@@ -12,7 +12,7 @@ var notaSchema = new Schema({
   usuarioId: String,
   date: {
     type: Date,
-    "default": DateNow
+    "default": Date.now
   },
   activo: {
     type: Boolean,

@@ -39,7 +39,8 @@ app.use(history()); // Rutas
 
 app.get('/', function (req, res) {
   res.send('hola mundo!');
-}); // eslint-disable-next-line no-undef
+});
+app.use('/api', require('./routes/nota')); // eslint-disable-next-line no-undef
 
 app.set('puerto', process.env.PORT || 3000);
 app.listen(app.get('puerto'), function () {
